@@ -15,10 +15,14 @@
             <input type="text" id="ssid" placeholder="Entrez le nom du Wi-Fi">
         </div>
 
-        <div class="form-group">
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" placeholder="Entrez le mot de passe du Wi-Fi">
-        </div>
+       <div class="form-group">
+    <label for="password">Mot de passe :</label>
+    <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Entrez le mot de passe du Wi-Fi">
+        <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span> 
+    </div>
+</div>
+        
 
         <div class="form-group">
             <label for="encryption">Type de sécurité :</label>
