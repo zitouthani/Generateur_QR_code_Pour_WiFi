@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de QR Code Wi-Fi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de QR Code Wi-Fi</h1>
+
+        <div class="form-group">
+            <label for="ssid">Nom du réseau (SSID) :</label>
+            <input type="text" id="ssid" placeholder="Entrez le nom du Wi-Fi">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" placeholder="Entrez le mot de passe du Wi-Fi">
+        </div>
+
+        <div class="form-group">
+            <label for="encryption">Type de sécurité :</label>
+            <select id="encryption">
+                <option value="WPA">WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">Aucun</option>
+            </select>
+        </div>
+
+        <button onclick="generateQrCode()">Générer le QR Code</button>
+
+        <div id="qrcode-container">
+            </div>
+
+        <p class="instructions">Scannez ce QR code avec votre téléphone pour vous connecter automatiquement au Wi-Fi.</p>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
