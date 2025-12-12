@@ -81,3 +81,27 @@ button:hover {
     color: #666;
     font-size: 0.9em;
 }
+
+/* Conteneur pour positionner l'icône */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Assurez-vous que l'input à l'intérieur du wrapper prend toute la largeur */
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* Ajoute de l'espace pour l'icône */
+}
+
+/* Style et positionnement de l'icône "œil" */
+.toggle-password {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    right: 10px; /* Position à droite */
+    transform: translateY(-50%); /* Ajuste le centrage */
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection du texte de l'icône */
+    font-size: 1.2em; /* Rend l'icône plus visible */
+    z-index: 10;
+}
