@@ -1,3 +1,7 @@
+// ===================================
+// 1. Fonction de Génération du QR Code
+// ===================================
+
 function generateQrCode() {
     const ssid = document.getElementById('ssid').value;
     const password = document.getElementById('password').value;
@@ -13,7 +17,6 @@ function generateQrCode() {
     }
 
     // Format du code QR pour le Wi-Fi (méthode standard)
-    // Documentation : https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-for-android
     let wifiConfig = `WIFI:S:${ssid};`;
 
     if (encryption === 'nopass') {
@@ -22,7 +25,7 @@ function generateQrCode() {
         wifiConfig += `T:${encryption};P:${password};`;
     }
 
-    wifiConfig += `H:false;`; // 'H' pour hidden (réseau caché), ici à 'false'
+    wifiConfig += `H:false;`;
 
     // Crée une nouvelle instance du QR code
     new QRCode(qrcodeContainer, {
@@ -33,8 +36,15 @@ function generateQrCode() {
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
     });
+}
 
-    /**
+
+// ==================================================
+// 2. Fonction pour Basculer la Visibilité du Mot de Passe
+//    (Doit être en dehors de generateQrCode)
+// ==================================================
+
+/**
  * Bascule la visibilité du mot de passe dans le champ de saisie.
  */
 function togglePasswordVisibility() {
@@ -46,12 +56,11 @@ function togglePasswordVisibility() {
         // Change le type en 'text' pour afficher le mot de passe
         passwordInput.type = 'text';
         // Change l'icône en œil barré (pour masquer)
-        toggleIcon.textContent = '🔒'; // Vous pouvez utiliser 🙈 ou 🔒
+        toggleIcon.textContent = '🔒';
     } else {
         // Change le type en 'password' pour masquer le mot de passe
         passwordInput.type = 'password';
         // Change l'icône en œil normal (pour afficher)
         toggleIcon.textContent = '👁️';
     }
-}
 }
