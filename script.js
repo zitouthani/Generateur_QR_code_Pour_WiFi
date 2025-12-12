@@ -33,4 +33,25 @@ function generateQrCode() {
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
     });
+
+    /**
+ * Bascule la visibilité du mot de passe dans le champ de saisie.
+ */
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.querySelector('.toggle-password');
+    
+    // Vérifie le type actuel de l'input
+    if (passwordInput.type === 'password') {
+        // Change le type en 'text' pour afficher le mot de passe
+        passwordInput.type = 'text';
+        // Change l'icône en œil barré (pour masquer)
+        toggleIcon.textContent = '🔒'; // Vous pouvez utiliser 🙈 ou 🔒
+    } else {
+        // Change le type en 'password' pour masquer le mot de passe
+        passwordInput.type = 'password';
+        // Change l'icône en œil normal (pour afficher)
+        toggleIcon.textContent = '👁️';
+    }
+}
 }
